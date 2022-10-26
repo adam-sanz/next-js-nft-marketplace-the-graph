@@ -12,7 +12,7 @@ const client = new ApolloClient({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
+    <div className="main-background">
       <Head>
         <title>NFT Marketplace</title>
         <meta name="description" content="NFT Marketplace" />
