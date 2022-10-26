@@ -1,5 +1,4 @@
-import styles from "../styles/Home.module.css"
-import { useMoralisQuery, useMoralis } from "react-moralis"
+import { useMoralis } from "react-moralis"
 import NFTBox from "../components/NFTBox"
 import networkMapping from "../constants/networkMapping.json"
 import GET_ACTIVE_ITEMS from "../constants/subgraphQueries"
@@ -16,8 +15,17 @@ export default function Home() {
     <div className="container mx-auto">
       <h1 className="py-4 px-4 font-bold text-2xl">Recently Listed</h1>
       <div className="flex flex-wrap">
+        {console.log(
+          "listedNfts.activeItems.length",
+          listedNfts ? listedNfts.activeItems.length : "active items = 0"
+        )}
+        {console.log(
+          "listedNfts.activeItems",
+          listedNfts ? listedNfts.activeItems : "no active items found"
+        )}
+
         {isWeb3Enabled ? (
-          loading || !listedNfts ? (
+          loading || listedNfts.activeItems.length === 0 ? (
             <div>Loading...</div>
           ) : (
             listedNfts.activeItems.map((nft) => {
