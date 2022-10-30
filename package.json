@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-nft-marketplace-fcc",
+  "name": "12a-nextjs-nft-marketplace-thegraph",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,29 +7,28 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "moralis:sync": "moralis-admin-cli connect-local-devchain --chain hardhat --moralisSubdomain cljf3cnvvkhl.grandmoralis.com --frpcPath ./frp/frpc",
-    "moralis:cloud": "moralis-admin-cli watch-cloud-folder --moralisSubdomain cljf3cnvvkhl.grandmoralis.com --autoSave 1 --moralisCloudfolder ./cloudFunctions"
+    "export": "next build && next export"
   },
   "dependencies": {
     "@apollo/client": "^3.7.0",
-    "@walletconnect/web3-provider": "^1.8.0",
-    "@web3auth/web3auth": "^2.1.3",
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "@habx/apollo-multi-endpoint-link": "^2.8.0",
+    "@rainbow-me/rainbowkit": "^0.7.1",
+    "antd": "^4.23.4",
     "graphql": "^16.6.0",
-    "magic-sdk": "7.0.0",
-    "moralis": "^1.5.11",
-    "moralis-v1": "^1.11.0",
-    "next": "12.1.5",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-moralis": "^1.3.5",
-    "web3uikit": "^0.0.133"
+    "next": "12.3.1",
+    "next-crypto-icons": "^1.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-toastify": "^9.0.8",
+    "urql": "^3.0.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.5",
-    "dotenv": "^16.0.0",
-    "eslint": "8.14.0",
-    "eslint-config-next": "12.1.5",
-    "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.24"
+    "dotenv": "^16.0.3",
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1",
+    "ethers": "^5.7.1",
+    "wagmi": "^0.6.7"
   }
 }

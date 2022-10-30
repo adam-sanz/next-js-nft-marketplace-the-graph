@@ -1,6 +1,11 @@
 {
   "5": {
-    "NftMarketplace": ["0x89cB87adc61630AC0A5c61E67E8CA7e90b520560"]
+    "NftMarketplace": ["0x89cB87adc61630AC0A5c61E67E8CA7e90b520560"],
+    "BasicNft": ["0x54E4757F405013146D32023013d105074D37cd89"]
   },
-  "31337": { "NftMarketplace": ["0x5FbDB2315678afecb367f032d93F642f64180aa3"] }
+  "31337": { "NftMarketplace": ["0x5FbDB2315678afecb367f032d93F642f64180aa3"] },
+  "80001": {
+    "NftMarketplace": ["0xe59284d0ad8b53BB8A91EAFf5f233d23eE09E86d"],
+    "BasicNft": "0x60C9Bd727E830f84Aae2606E528123480E0b6852"
+  }
 }

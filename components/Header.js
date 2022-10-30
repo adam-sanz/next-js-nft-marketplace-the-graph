@@ -1,19 +1,41 @@
-import { ConnectButton } from "web3uikit"
-import Link from "next/link"
+import Link from 'next/link';
+import styles from '../styles/Home.module.css';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function Header() {
-    return (
-        <nav className="p-5 border-b-2 flex flex-row justify-between items-center">
-            <h1 className="py-4 px-4 font-bold text-3xl">NFT Marketplace</h1>
-            <div className="flex flex-row items-center">
-                <Link href="/">
-                    <a className="mr-4 p-6">Home</a>
-                </Link>
-                <Link href="/sell-nft">
-                    <a className="mr-4 p-6">Sell NFT</a>
-                </Link>
-                <ConnectButton moralisAuth={false} />
-            </div>
-        </nav>
-    )
+  return (
+    <header className={styles.header}>
+      <nav>
+        <div className='title'>
+          <Link href='/'>
+            <a className='title'>NFT Marketplace</a>
+          </Link>
+        </div>
+        <div className='links'>
+          <Link href='/'>
+            <button className='nav-btn'>Home</button>
+          </Link>
+          <Link href='/mint-nft'>
+            <button className='nav-btn'>
+              <span className='highlight bold'>Mint</span>
+            </button>
+          </Link>
+        </div>
+        <div className='connect-btn'>
+          <ConnectButton
+            showBalance={false}
+            showNe
+            accountStatus={{
+              smallScreen: 'avatar',
+              largeScreen: 'avatar',
+            }}
+            chainStatus={{
+              smallScreen: 'icon',
+              largeScreen: 'full',
+            }}
+          />
+        </div>
+      </nav>
+    </header>
+  );
 }
