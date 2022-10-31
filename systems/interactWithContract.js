@@ -3,7 +3,7 @@ import {
   useContractWrite,
   usePrepareContractWrite,
   useWaitForTransaction,
-} from 'wagmi';
+} from "wagmi"
 
 function readFromContract(address, abi, functionName, args, enabled) {
   const { data, isError, isLoading } = useContractRead({
@@ -12,14 +12,14 @@ function readFromContract(address, abi, functionName, args, enabled) {
     functionName,
     args,
     enabled,
-  });
+  })
 
   if (isError) {
-    console.log('Error reading from contract');
-    return null;
+    console.log("Error reading from contract")
+    return null
   }
 
-  return data;
+  return data
 }
 
 function writeToContract(
@@ -28,7 +28,7 @@ function writeToContract(
   functionName,
   args,
   handling,
-  enabled,
+  enabled
 ) {
   const { config, status, error, refetch } = usePrepareContractWrite({
     addressOrName: contractAddress,
@@ -36,20 +36,20 @@ function writeToContract(
     functionName,
     args,
     enabled,
-  });
+  })
 
   const { data, write } = useContractWrite({
     ...config,
     onSuccess: handling.onSuccess,
     onError: handling.onError,
-  });
+  })
 
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
     confirmations: 1,
-  });
+  })
 
-  return { write, isLoading, isSuccess, refetch };
+  return { write, isLoading, isSuccess, refetch }
 }
 
-export { readFromContract, writeToContract };
+export { readFromContract, writeToContract }
