@@ -1,30 +1,30 @@
-import Head from "next/head";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import "../styles/globals.css";
-import "@rainbow-me/rainbowkit/styles.css";
-import "react-toastify/dist/ReactToastify.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "../styles/antd.dark.css";
+import Head from "next/head"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import "../styles/globals.css"
+import "@rainbow-me/rainbowkit/styles.css"
+import "react-toastify/dist/ReactToastify.css"
+import "@fortawesome/fontawesome-free/css/all.min.css"
+import "../styles/antd.dark.css"
 
 import {
   getDefaultWallets,
   RainbowKitProvider,
   darkTheme,
-} from "@rainbow-me/rainbowkit";
-import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
-import { alchemyProvider } from "wagmi/providers/alchemy";
-import { publicProvider } from "wagmi/providers/public";
+} from "@rainbow-me/rainbowkit"
+import { chain, configureChains, createClient, WagmiConfig } from "wagmi"
+import { alchemyProvider } from "wagmi/providers/alchemy"
+import { publicProvider } from "wagmi/providers/public"
 import {
   ApolloClient,
   InMemoryCache,
   ApolloLink,
   ApolloProvider,
   createHttpLink,
-} from "@apollo/client";
-import { MultiAPILink } from "@habx/apollo-multi-endpoint-link";
-import { onError } from "@apollo/client/link/error";
-import { ToastContainer } from "react-toastify";
+} from "@apollo/client"
+import { MultiAPILink } from "@habx/apollo-multi-endpoint-link"
+import { onError } from "@apollo/client/link/error"
+import { ToastContainer } from "react-toastify"
 
 const defaultChains = [
   { ...chain.goerli },
@@ -33,24 +33,24 @@ const defaultChains = [
     ...chain.arbitrumGoerli,
     iconUrl: "https://arbitrum.io/favicon.ico",
   },
-];
+]
 
 const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
   alchemyProvider({ apiKey: "z1bGWuHkB2x8_C0MM-W5cFFqPH22ED8q" }),
   publicProvider(),
-]);
+])
 
 const { connectors } = getDefaultWallets({
   appName: "NFT Marketplace - The Graph",
   chains,
-});
+})
 
 const wagmiClient = createClient({
   provider,
   webSocketProvider,
   autoConnect: true,
   connectors,
-});
+})
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
@@ -58,10 +58,10 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
       console.log(
         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
       )
-    );
+    )
   }
-  if (networkError) console.log(`[Network error]: ${networkError}`);
-});
+  if (networkError) console.log(`[Network error]: ${networkError}`)
+})
 
 const apolloClient = new ApolloClient({
   cache: new InMemoryCache(),
@@ -72,6 +72,7 @@ const apolloClient = new ApolloClient({
         goerli:
           "https://api.studio.thegraph.com/query/37108/nft-marketplace/v0.0.1",
         mumbai:
+          //"https://api.thegraph.com/subgraphs/name/adam-sanz/nftmarketplace",
           "https://api.thegraph.com/subgraphs/name/adam-sanz/nftmarketplace",
         arbitrumGoerli: process.env.NEXT_PUBLIC_SUBGRAPH_URL_ARBITRUM_GOERLI,
       },
@@ -80,7 +81,7 @@ const apolloClient = new ApolloClient({
     }),
   ]),
   cachePolicy: "network-only",
-});
+})
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -121,7 +122,7 @@ function MyApp({ Component, pageProps }) {
         position={"bottom-right"}
       />
     </div>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

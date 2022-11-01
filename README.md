@@ -1,20 +1,4 @@
-<a name="readme-top"></a>
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/polar0/full-blockchain-solidity-course-js">
-    <img src="../images/blockchain.png" alt="Logo" width="80" height="80">
-  </a>
-
-<h2 align="center">Full Blockchain, Solidity & Full-Stack Web3 development with JavaScript </h3>
-
-  <p align="center">
-    Everything related to my progress through <a href="https://youtu.be/gyMwXuJrbJQ">this course from Patrick Collins</a>
-    <br />
-    <a href="https://youtu.be/gyMwXuJrbJQ"><strong>Go to the video »</strong></a>
-  </p>
-</div>
+<h2>Full Blockchain, Solidity & Full-Stack Web3 development with JavaScript </h3>
 
 <br />
 
@@ -27,17 +11,13 @@
 
 1. Clone the whole repo:
    ```sh
-   git clone https://github.com/polar0/full-blockchain-solidity-course-js.git
+   git clone https://github.com/adam-sanz/next-js-nft-marketplace-the-graph
    ```
-2. Navigate into the subdirectory:
-   ```sh
-   cd 12a-nextjs-nft-marketplace-thegraph
-   ```
-3. Install NPM packages using `yarn` or `npm install`.
+2. Install NPM packages using `yarn` or `npm install`.
 
 ## Usage
 
-1. You can update the contracts addresses in `constants/contractAddresses.json` to match the deployment addresses from `10-hardhat-nft-marketplace`:
+1. You can update the contracts addresses in `constants/contractAddresses.json` to match the deployment addresses from your deployed contract `https://github.com/adam-sanz/hardhat-nft-marketplace-contract`:
 
 ```json
 {
@@ -56,30 +36,25 @@
 }
 ```
 
-To get it to work locally, you will need to navigate to `10-hardhat-nft-marketplace` to run a local node with `yarn hardhat node` and deploy the contracts with `yarn hardhat run scripts/deploy.js --network localhost`.
+To get it to work locally, you will need to navigate to `https://github.com/adam-sanz/hardhat-nft-marketplace-contract` to run a local node with `yarn hardhat node` and deploy the contracts with `yarn hardhat run scripts/deploy.js --network localhost`.
 
 2. Launch the local development server with `yarn dev` or `npm run dev`.
 
 #
 
-<a href="https://github.com/polar0/full-blockchain-solidity-course-js/tree/main/12a-nextjs-nft-marketplace-thegraph" id="mission-12"><img src="https://shields.io/badge/Mission%2012%20-%20Next.js%20&%20TheGraph%20●%20NFT%20Marketplace%20(Lesson%2015)-742EC0?style=for-the-badge&logo=target" height="35" /></a>
-
-<a href="https://github.com/polar0/full-blockchain-solidity-course-js/tree/main/12b-graph-nft-marketplace">Go to the TheGraph configuration submodule (`12b-graph-nft-marketplace`)</a>
-
 ### Achievements
 
-- Building a subgraph to index the marketplace contract events (The Graph Studio)
+- Building multiple self hosted subgraphs (Goerli, mumbai) to index the marketplace contract events (The Graph Studio)
 - Using The Graph CLI to deploy the subgraph
 - Querying the subgraph with GraphQL & Apollo client
 - Hosting the Marketplace:
-  - Fleek (IPFS): https://calm-forest-4357.on.fleek.co/
-  - Vercel: https://nextjs-nft-marketplace-thegraph-murex.vercel.app/
+  - Fleek (IPFS): https://muddy-hall-8727.on.fleek.co/
 
 ### Bonus achievements
 
 - Using Rainbowkit & Wagmi to interact with the blockchain (Wallet connection & transactions with the smart contract)
-- Displaying 3 different marketplace listing pages for the chains it's deployed on (Polygon, Arbitrum & Ethereum testnets)
-- Deploying 3 different subgraphs with The Graph Studio & Hosted Services on these 3 networks
+- Displaying 2 different marketplace listing pages for the chains it's deployed on (Polygon & Ethereum testnets)
+- Deploying 2 different subgraphs with The Graph Studio & Hosted Services on these 2 networks
 - Handling notifications: success, error & displaying pending transactions with React-Toastify
 - Building a minting page for the NFT that can be listed
 - Customizing the UI & UX
@@ -100,8 +75,6 @@ To get it to work locally, you will need to navigate to `10-hardhat-nft-marketpl
 [![Antd]](https://ant.design/)
 
 #
-
-### [Back to the main repo](https://github.com/polar0/full-blockchain-solidity-course-js)
 
 [solidity]: https://custom-icon-badges.demolab.com/badge/Solidity-3C3C3D?style=for-the-badge&logo=solidity&logoColor=white
 [javascript]: https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black
