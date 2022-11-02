@@ -14,6 +14,7 @@ artifacts
 
 # next.js
 /.next/
+.next
 
 # typescript
 *.tsbuildinfo
