@@ -72,7 +72,6 @@ const apolloClient = new ApolloClient({
         goerli:
           "https://api.studio.thegraph.com/query/37108/nft-marketplace/v0.0.1",
         mumbai:
-          //"https://api.thegraph.com/subgraphs/name/adam-sanz/nftmarketplace",
           "https://api.thegraph.com/subgraphs/name/adam-sanz/nftmarketplace",
         arbitrumGoerli: process.env.NEXT_PUBLIC_SUBGRAPH_URL_ARBITRUM_GOERLI,
       },

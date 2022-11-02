@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from "@apollo/client"
 
 const GET_ACTIVE_ITEMS_GOERLI = gql`
   query GetActiveItems @api(name: goerli) {
@@ -14,7 +14,7 @@ const GET_ACTIVE_ITEMS_GOERLI = gql`
       price
     }
   }
-`;
+`
 const GET_ACTIVE_ITEMS_MUMBAI = gql`
   query GetActiveItems @api(name: mumbai) {
     activeItems(
@@ -29,7 +29,7 @@ const GET_ACTIVE_ITEMS_MUMBAI = gql`
       price
     }
   }
-`;
+`
 const GET_ACTIVE_ITEMS_ARBITRUM_GOERLI = gql`
   query GetActiveItems @api(name: arbitrumGoerli) {
     activeItems(
@@ -44,10 +44,10 @@ const GET_ACTIVE_ITEMS_ARBITRUM_GOERLI = gql`
       price
     }
   }
-`;
+`
 
 export {
   GET_ACTIVE_ITEMS_GOERLI,
   GET_ACTIVE_ITEMS_MUMBAI,
   GET_ACTIVE_ITEMS_ARBITRUM_GOERLI,
-};
+}
