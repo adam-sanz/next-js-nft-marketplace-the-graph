@@ -14,6 +14,7 @@ import { useEffect, useState } from "react"
 export default function SellingModal({ isVisible, hideModal }) {
   const { network } = useProvider()
   const [marketplaceAddress, setMarketplaceAddress] = useState(null)
+  const [networkName, setNetworkName] = useState(null)
   const [nftAddress, setNftAddress] = useState(null)
   const [isWalletOpen, setIsWalletOpen] = useState(false)
   const [isFormValid, setIsFormValid] = useState(false)
@@ -110,6 +111,14 @@ export default function SellingModal({ isVisible, hideModal }) {
     e && e.stopPropagation()
   }
 
+  function getNetworkName(network) {
+    if (network.name === "maticmum") {
+      setNetworkName("matic")
+    } else if (network.name === "goerli") {
+      setNetworkName("eth")
+    }
+  }
+
   async function handleChange(value, type) {
     if (value === null) {
       setIsFormValid(false)
@@ -156,6 +165,10 @@ export default function SellingModal({ isVisible, hideModal }) {
       setErrorMessage("")
     }
   }, [price, tokenId])
+
+  useEffect(() => {
+    getNetworkName(network)
+  }, [network])
 
   return (
     <Modal
@@ -263,6 +276,14 @@ export default function SellingModal({ isVisible, hideModal }) {
             min={0}
             value={price}
           />
+        </div>
+        <div>A 10% sell fee will be added to your sale.</div>
+        <div>
+          Your estimated returns will be:
+          <div className="icon-wrapper">
+            {price * 0.9}
+            <CryptoIcon name={networkName} width={16} style={"icon"} />
+          </div>
         </div>
         <div className="error-message">{errorMessage}</div>
       </div>
